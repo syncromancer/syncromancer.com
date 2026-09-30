@@ -7,13 +7,19 @@ export const PricingCalculator: React.FC = () => {
   const [seats, setSeats] = useState(5);
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('annual');
 
-  const basePricePerSeat = 29;
+  const soloBasePrice = 12;
+  const proBasePricePerSeat = 29;
   const annualDiscount = 0.2; // 20% off
+
+  const effectiveSoloPrice =
+    billingCycle === 'annual'
+      ? Math.round(soloBasePrice * (1 - annualDiscount))
+      : soloBasePrice;
 
   const effectiveSeatPrice =
     billingCycle === 'annual'
-      ? Math.round(basePricePerSeat * (1 - annualDiscount))
-      : basePricePerSeat;
+      ? Math.round(proBasePricePerSeat * (1 - annualDiscount))
+      : proBasePricePerSeat;
 
   const totalPerMonth = seats * effectiveSeatPrice;
   const totalBilledAnnual = totalPerMonth * 12;
@@ -63,7 +69,63 @@ export const PricingCalculator: React.FC = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {/* Plan 1: Solo Producer (Individual) */}
+          <div className="bg-studio-950 border border-studio-800 rounded-3xl p-8 flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-mono text-cyan-400 uppercase font-bold tracking-wider block mb-2">
+                Solo Creators & Artists
+              </span>
+              <h3 className="text-2xl font-black text-white mb-2">Solo Producer</h3>
+              <p className="text-xs text-slate-400 mb-6">
+                Full-featured cloud DaaS workstation for individual musicians working without a team.
+              </p>
+
+              <div className="flex items-baseline gap-1 mb-6">
+                <span className="text-4xl font-black text-white">${effectiveSoloPrice}</span>
+                <span className="text-slate-400 text-xs font-mono">/ month</span>
+              </div>
+
+              <ul className="flex flex-col gap-3 text-xs text-slate-300">
+                <li className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>1 User seat (no team management required)</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Unlimited private solo projects & sessions</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>High-speed SeaweedFS stem storage</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Cardinal modular VCV Rack & synth engine</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Non-destructive Git dual-artifact audio history</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Sample-accurate offline export & A/B audition</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-8">
+              <a
+                href="https://portal.syncromancer.com/billing?plan=solo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3.5 rounded-xl bg-studio-900 hover:bg-studio-850 text-white border border-studio-700 font-bold text-xs flex items-center justify-center gap-2 transition-all"
+              >
+                <span>Start Solo Session</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
 
           {/* Plan 2: Pro Studio (Featured) */}
           <div className="bg-gradient-to-b from-studio-900 to-studio-950 border-2 border-cyan-500/80 rounded-3xl p-8 flex flex-col justify-between relative shadow-2xl shadow-cyan-500/10">
@@ -178,7 +240,7 @@ export const PricingCalculator: React.FC = () => {
         <div className="max-w-2xl mx-auto bg-studio-950 border border-studio-800 rounded-3xl p-6 sm:p-8 text-center shadow-xl">
           <h4 className="text-lg font-bold text-white mb-2">Estimate Your Studio Team Plan</h4>
           <p className="text-xs text-slate-400 mb-6">
-            Adjust the slider to calculate your team's total monthly or annual investment.
+            Working with a multi-person crew? Adjust the slider to calculate your team's Pro Studio investment.
           </p>
 
           <div className="flex items-center justify-between font-mono text-xs text-slate-300 mb-2">
