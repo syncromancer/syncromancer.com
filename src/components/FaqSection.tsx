@@ -10,16 +10,16 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    q: 'How does Git handle large, multi-gigabyte audio files?',
-    a: 'Syncromancer separates the session manifest from the binary audio payload. The session schema, track metadata, plugin parameters, and MIDI notes are stored directly in Git as declarative JSON. Large 24-bit/96kHz WAV stems are stored in high-performance SeaweedFS or Git LFS with content-addressable SHA-256 hashes, keeping your Git repo lightweight and fast.',
+    q: 'How does Syncromancer handle large, multi-gigabyte audio files?',
+    a: 'Syncromancer separates the session manifest from the binary audio payload. The session schema, track metadata, plugin parameters, and MIDI notes are stored directly in Supabase as declarative JSON. Large 24-bit/96kHz WAV stems are stored in high-throughput SeaweedFS distributed object storage with content-addressable SHA-256 hashes, keeping session sync instantaneous and audio playback stutter-free.',
   },
   {
-    q: 'Can our studio self-host Syncromancer on Kubernetes?',
-    a: 'Yes! Syncromancer is fully cloud-native. We provide a complete production Helm chart that deploys the Portal web application, SeaweedFS distributed audio storage, Supabase/PostgreSQL metadata store, OpenLDAP authentication, and Ingress with automated TLS certificates.',
+    q: 'Can I use my existing studio hardware, audio interfaces, and MIDI controllers?',
+    a: 'Yes! Syncromancer connects directly with any standard USB or Thunderbolt audio interface, MIDI keyboard, or hardware synthesizer via standard Web Audio and Web MIDI with zero driver installations required.',
   },
   {
-    q: 'Which Kubernetes storage engine should we choose (OpenEBS vs Rook/Ceph vs Longhorn)?',
-    a: 'For maximum throughput and microsecond seek latencies on dedicated NVMe drives, we recommend OpenEBS Mayastor. For distributed multi-rack enterprise reliability with self-healing, choose Rook/Ceph. For lightweight Kubernetes setups or smaller edge studio clusters with automated S3 snapshots, choose Longhorn.',
+    q: 'How does Syncromancer stream multi-gigabyte audio stems without latency?',
+    a: 'Syncromancer pairs client-side WebAudio Worklets with high-throughput SeaweedFS distributed audio storage. Audio buffers stream with microsecond seek latencies, delivering smooth, sample-accurate 24-bit/96kHz multi-track playback without dropouts.',
   },
   {
     q: 'How does analog hardware re-amping work in Syncromancer?',
@@ -50,7 +50,7 @@ export const FaqSection: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-slate-300 text-sm sm:text-base">
-            Everything you need to know about DAW as a Service, Git audio collaboration, and self-hosting.
+            Everything you need to know about DAW as a Service, real-time cloud collaboration, and studio workflows.
           </p>
         </div>
 

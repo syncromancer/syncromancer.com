@@ -1,6 +1,6 @@
 # syncromancer.com
 
-The official marketing and portal site for **Syncromancer** — the collaborative DAW as a Service (DaaS) designed for modern music production, non-destructive Git-based audio workflows, open-source DSP, and analog hardware re-amping.
+The official marketing and portal site for **Syncromancer** — the collaborative DAW as a Service (DaaS) designed for modern music production, non-destructive cloud audio collaboration, Supabase session sync, SeaweedFS stem storage, open-source DSP, and analog hardware re-amping.
 
 Visit the live website at [https://syncromancer.com/](https://syncromancer.com/).
 

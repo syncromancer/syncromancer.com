@@ -4,15 +4,11 @@ import React from 'react';
 import {
   Server,
   HardDrive,
-  Database,
   Lock,
-  Terminal,
-  Layers,
   Cpu,
-  ArrowRight,
-  ExternalLink,
   ShieldCheck,
-  CheckCircle2,
+  Zap,
+  Activity,
 } from 'lucide-react';
 
 export const DeploymentArchitectureSection: React.FC = () => {
@@ -22,14 +18,14 @@ export const DeploymentArchitectureSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/80 text-cyan-300 text-xs font-mono font-semibold mb-3">
             <Server className="w-3.5 h-3.5" />
-            <span>CLOUD-NATIVE ARCHITECTURE & KUBERNETES</span>
+            <span>CLOUD-SCALE STUDIO PLATFORM</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-            Deploy on Any Kubernetes Cluster.
+            Engineered for Flawless Audio Performance.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300">
-            Run your private DaaS instance in your private cloud, on-premises studio datacenter, or
-            managed Kubernetes. Fully packaged as a production Helm chart.
+            Powered by high-throughput distributed storage, client-side WebAssembly DSP engines,
+            and enterprise-grade session encryption.
           </p>
         </div>
 
@@ -68,11 +64,11 @@ export const DeploymentArchitectureSection: React.FC = () => {
               <p className="text-xs text-slate-400 leading-relaxed">
                 Next.js full-stack studio portal hosted at{' '}
                 <code className="text-cyan-300">portal.syncromancer.com</code>. Manages collaborative
-                sessions, seat billing, Git webhooks, and team access.
+                sessions, seat billing, webhook notifications, and team access.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-blue-400">
-              Auto-scales with Ingress NGINX
+              Auto-scales with high availability
             </div>
           </div>
 
@@ -108,7 +104,7 @@ export const DeploymentArchitectureSection: React.FC = () => {
               <h3 className="text-base font-bold text-white mb-2">LDAP & Supabase</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
                 Enterprise Active Directory / OpenLDAP group mapping to DAW roles (Owner, Engineer,
-                Contributor, Guest), paired with Supabase PostgreSQL for session state and PR manifests.
+                Contributor, Guest), paired with Supabase PostgreSQL for real-time session state, manifests, and role permissions.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-emerald-400">
@@ -117,115 +113,43 @@ export const DeploymentArchitectureSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Kubernetes Storage Engine Comparison */}
-        <div className="bg-studio-900/90 border border-studio-800 rounded-3xl p-8 mb-12">
-          <div className="max-w-3xl mb-8">
-            <h3 className="text-xl font-bold text-white flex items-center gap-2">
-              <HardDrive className="w-5 h-5 text-cyan-400" />
-              <span>Kubernetes Storage Options for Audio Workloads</span>
-            </h3>
-            <p className="text-xs text-slate-400 mt-1">
-              Multi-track audio playback requires deterministic sequential read throughput and microsecond
-              random seeks. Our Helm chart supports all major cloud-native storage provisioners.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
-            {/* OpenEBS */}
-            <div className="p-5 bg-studio-950 rounded-2xl border border-studio-800 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-bold text-sm text-cyan-300">OpenEBS Mayastor</span>
-                  <span className="px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 font-mono text-[9px] uppercase font-bold">
-                    NVMe-oF Speed
-                  </span>
-                </div>
-                <p className="text-slate-400 leading-relaxed mb-4">
-                  Uses user-space SPDK and NVMe over Fabrics. Delivers raw physical NVMe drive IOPS
-                  with sub-millisecond latencies. Ideal for high-density SeaweedFS volume servers.
-                </p>
-              </div>
-              <div className="pt-3 border-t border-studio-800/80 font-mono text-[10px] text-slate-400 flex flex-col gap-1">
-                <span>• Throughput: Up to 10 GB/s</span>
-                <span>• Best For: On-Premises Studio NVMe</span>
-              </div>
-            </div>
-
-            {/* Rook/Ceph */}
-            <div className="p-5 bg-studio-950 rounded-2xl border border-studio-800 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-bold text-sm text-blue-300">Rook / Ceph</span>
-                  <span className="px-2 py-0.5 rounded bg-blue-950 text-blue-400 font-mono text-[9px] uppercase font-bold">
-                    Enterprise Resilient
-                  </span>
-                </div>
-                <p className="text-slate-400 leading-relaxed mb-4">
-                  Industry gold-standard distributed Ceph cluster. Offers block (RBD), POSIX (CephFS),
-                  and S3 object storage with multi-node replication and self-healing resilience.
-                </p>
-              </div>
-              <div className="pt-3 border-t border-studio-800/80 font-mono text-[10px] text-slate-400 flex flex-col gap-1">
-                <span>• Throughput: High Distributed Scale</span>
-                <span>• Best For: Multi-Rack Production DaaS</span>
-              </div>
-            </div>
-
-            {/* Longhorn */}
-            <div className="p-5 bg-studio-950 rounded-2xl border border-studio-800 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-bold text-sm text-purple-300">Longhorn</span>
-                  <span className="px-2 py-0.5 rounded bg-purple-950 text-purple-400 font-mono text-[9px] uppercase font-bold">
-                    Lightweight & Backups
-                  </span>
-                </div>
-                <p className="text-slate-400 leading-relaxed mb-4">
-                  Simple, 100% open-source distributed block storage by SUSE. Built-in incremental
-                  cross-cluster snapshots and automatic backups to S3/NFS. Low resource footprint.
-                </p>
-              </div>
-              <div className="pt-3 border-t border-studio-800/80 font-mono text-[10px] text-slate-400 flex flex-col gap-1">
-                <span>• Throughput: Balanced IOPS</span>
-                <span>• Best For: Edge Studios & Cloud K8s</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Helm Quickstart Terminal */}
-        <div className="max-w-4xl mx-auto bg-studio-900 border border-studio-800 rounded-2xl p-6 font-mono text-xs shadow-2xl">
-          <div className="flex items-center justify-between mb-4 pb-3 border-b border-studio-800 text-slate-400">
-            <div className="flex items-center gap-2">
-              <Terminal className="w-4 h-4 text-cyan-400" />
-              <span className="text-white font-bold">Quickstart Helm Installation</span>
-            </div>
-            <span>helm v3.x compatible</span>
-          </div>
-
-          <div className="flex flex-col gap-2.5 text-slate-300">
+        {/* 3 Pillars of Studio Audio Reliability */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-6 bg-studio-900 border border-studio-800 rounded-2xl flex flex-col justify-between">
             <div>
-              <span className="text-slate-500"># 1. Add and inspect the Syncromancer Helm chart</span>
-              <p className="text-cyan-300 font-bold">
-                helm repo add syncromancer https://charts.syncromancer.com
+              <div className="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 flex items-center justify-center mb-3">
+                <Zap className="w-4 h-4" />
+              </div>
+              <h4 className="text-sm font-bold text-white mb-1.5">Sub-Millisecond Buffering</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Web Audio Worklets operate on a separate high-priority rendering thread, eliminating UI stutter
+                and jitter even during heavy automation passes.
               </p>
             </div>
+          </div>
+
+          <div className="p-6 bg-studio-900 border border-studio-800 rounded-2xl flex flex-col justify-between">
             <div>
-              <span className="text-slate-500"># 2. Deploy full DaaS stack with SeaweedFS, LDAP, and Ingress</span>
-              <p className="text-emerald-400 font-bold">
-                helm install syncromancer ./apps/saas/helm \
-                <br />
-                &nbsp;&nbsp;--namespace syncromancer --create-namespace \
-                <br />
-                &nbsp;&nbsp;--set ingress.host=portal.syncromancer.com \
-                <br />
-                &nbsp;&nbsp;--set storage.className=openebs-kernel-nvme
+              <div className="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center justify-center mb-3">
+                <Activity className="w-4 h-4" />
+              </div>
+              <h4 className="text-sm font-bold text-white mb-1.5">Lossless Stem Streaming</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Fast sequential streaming built for uncompressed 24-bit/96kHz WAV files ensures immediate
+                playback response across 64+ simultaneous channels.
               </p>
             </div>
+          </div>
+
+          <div className="p-6 bg-studio-900 border border-studio-800 rounded-2xl flex flex-col justify-between">
             <div>
-              <span className="text-slate-500"># 3. Access your private studio instance</span>
-              <p className="text-purple-300">
-                kubectl get ingress -n syncromancer &rarr; https://portal.syncromancer.com/
+              <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center mb-3">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <h4 className="text-sm font-bold text-white mb-1.5">Cryptographic Stem Integrity</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Every dry recording and bounce is anchored by SHA-256 content verification, guaranteeing that
+                collaborative edits never overwrite or corrupt your master recordings.
               </p>
             </div>
           </div>

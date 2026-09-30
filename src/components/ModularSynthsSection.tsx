@@ -27,7 +27,7 @@ export const ModularSynthsSection: React.FC = () => {
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300">
             Powered by open-source modular synthesizers and boutique studio pedalboard algorithms. No
-            proprietary format locks; all patches are transparently serialized in Git.
+            proprietary format locks; all patches are transparently synchronized in Supabase.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export const ModularSynthsSection: React.FC = () => {
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
                 Direct integration with the DISTRHO Cardinal modular synthesizer engine. Connect
                 virtual patch cables, VCAs, oscillators, and filters. Patches are parsed into
-                declarative Git manifests and rendered deterministically in the cloud or client.
+                declarative session manifests and rendered deterministically in the cloud or client.
               </p>
 
               <div className="grid grid-cols-2 gap-2 text-xs font-mono text-slate-400 mb-6">
@@ -58,7 +58,7 @@ export const ModularSynthsSection: React.FC = () => {
                   <span>Infinite modular patch cables</span>
                 </div>
                 <div className="p-2.5 bg-studio-900 rounded-xl border border-studio-800">
-                  <span className="text-rose-400 font-bold block mb-0.5">Git Versioned</span>
+                  <span className="text-rose-400 font-bold block mb-0.5">Cloud Synchronized</span>
                   <span>.vcv / .cardinal JSON patches</span>
                 </div>
               </div>

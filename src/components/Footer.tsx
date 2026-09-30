@@ -17,8 +17,8 @@ export const Footer: React.FC = () => {
               <span className="font-bold text-white text-sm">Syncromancer</span>
             </div>
             <p className="text-slate-400 leading-relaxed text-[11px]">
-              DAW as a Service (DaaS) for collaborative music engineering. Non-destructive Git audio
-              branching, open-source DSP, and analog hardware re-amping.
+              DAW as a Service (DaaS) for collaborative music engineering. Non-destructive audio
+              layering, Supabase session sync, and SeaweedFS stem storage.
             </p>
             <div className="flex items-center gap-2 text-[10px] text-cyan-400 font-mono">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
@@ -76,31 +76,30 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 3: Cloud Native & Helm */}
+          {/* Col 3: Studio Platform */}
           <div>
             <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">
-              Infrastructure
+              Studio Platform
             </span>
             <ul className="flex flex-col gap-2">
               <li>
-                <a href="#architecture" className="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
-                  <Terminal className="w-3 h-3 text-cyan-400" />
-                  <span>Kubernetes Helm Chart</span>
+                <a href="#architecture" className="hover:text-cyan-400 transition-colors">
+                  Cloud Audio Architecture
                 </a>
               </li>
               <li>
-                <a href="#architecture" className="hover:text-cyan-400 transition-colors">
-                  SeaweedFS Audio Storage
+                <a href="#workflow" className="hover:text-cyan-400 transition-colors">
+                  Non-Destructive Stems
                 </a>
               </li>
               <li>
-                <a href="#architecture" className="hover:text-cyan-400 transition-colors">
-                  OpenEBS Mayastor & Ceph
+                <a href="#hardware" className="hover:text-cyan-400 transition-colors">
+                  Hardware Re-Amping
                 </a>
               </li>
               <li>
-                <a href="#architecture" className="hover:text-cyan-400 transition-colors">
-                  Active Directory / LDAP SSO
+                <a href="#pricing" className="hover:text-cyan-400 transition-colors">
+                  Enterprise SSO & Security
                 </a>
               </li>
             </ul>
@@ -134,8 +133,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#git-workflow" className="hover:text-cyan-400 transition-colors">
-                  Git LFS Audio Schema
+                <a href="#workflow" className="hover:text-cyan-400 transition-colors">
+                  Supabase & SeaweedFS Storage
                 </a>
               </li>
             </ul>

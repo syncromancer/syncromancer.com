@@ -3,7 +3,6 @@
 import React from 'react';
 import {
   Play,
-  GitPullRequest,
   CheckCircle2,
   Cpu,
   Layers,
@@ -31,8 +30,8 @@ export const HeroSection: React.FC = () => {
             <span>DAW AS A SERVICE (DaaS)</span>
           </div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-studio-900 border border-studio-800 text-slate-300 text-xs font-mono">
-            <GitPullRequest className="w-3.5 h-3.5 text-blue-400" />
-            <span>GIT PR-DRIVEN AUDIO WORKFLOW</span>
+            <Layers className="w-3.5 h-3.5 text-blue-400" />
+            <span>NON-DESTRUCTIVE COLLABORATION</span>
           </div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-studio-900 border border-studio-800 text-slate-300 text-xs font-mono">
             <Cpu className="w-3.5 h-3.5 text-rose-400" />
@@ -51,8 +50,8 @@ export const HeroSection: React.FC = () => {
           </h1>
           <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
             Record immutable archival dry stems. Stack open-source DSP pedalboards, Cardinal modular
-            racks, and analog outboard re-amps. Collaborate through Git Pull Requests with
-            sample-accurate latency compensation and zero cloud lock-in.
+            racks, and analog outboard re-amps. Collaborate in real-time with sample-accurate latency
+            compensation, Supabase session sync, and high-throughput SeaweedFS storage.
           </p>
 
           {/* Primary CTA Buttons */}
@@ -68,11 +67,11 @@ export const HeroSection: React.FC = () => {
             </a>
 
             <a
-              href="#architecture"
+              href="#workflow"
               className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-studio-900/90 hover:bg-studio-850 text-white border border-studio-700/80 hover:border-studio-600 font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md"
             >
-              <Terminal className="w-4 h-4 text-cyan-400" />
-              <span>Kubernetes Helm Chart & Storage Guide</span>
+              <Layers className="w-4 h-4 text-cyan-400" />
+              <span>Explore Studio Workflow</span>
             </a>
           </div>
 
@@ -87,7 +86,7 @@ export const HeroSection: React.FC = () => {
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              Self-Hostable on K8s
+              Lossless 24-bit/96kHz Audio
             </span>
           </div>
         </div>
@@ -109,10 +108,10 @@ export const HeroSection: React.FC = () => {
 
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2 bg-studio-900 border border-studio-800 px-2.5 py-1 rounded-lg font-mono text-[11px] text-cyan-400">
-                <GitPullRequest className="w-3.5 h-3.5 text-cyan-400" />
-                <span>PR #14: ampeg-svt-reamp</span>
+                <Layers className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Take 02: ampeg-svt-reamp</span>
                 <span className="px-1.5 py-0.2 bg-emerald-500/20 text-emerald-300 rounded text-[9px] uppercase font-bold">
-                  PASS
+                  SYNCED
                 </span>
               </div>
               <div className="flex items-center gap-1 bg-studio-900 border border-studio-800 px-2 py-1 rounded-lg font-mono text-[11px] text-slate-300">

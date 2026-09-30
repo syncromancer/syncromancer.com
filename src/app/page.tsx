@@ -3,7 +3,7 @@
 import React from 'react';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
-import { GitWorkflowSection } from '@/components/GitWorkflowSection';
+import { CollaborativeWorkflowSection } from '@/components/CollaborativeWorkflowSection';
 import { HardwareInTheLoopSection } from '@/components/HardwareInTheLoopSection';
 import { ModularSynthsSection } from '@/components/ModularSynthsSection';
 import { DeploymentArchitectureSection } from '@/components/DeploymentArchitectureSection';
@@ -17,7 +17,7 @@ export default function HomePage() {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
-        <GitWorkflowSection />
+        <CollaborativeWorkflowSection />
         <ModularSynthsSection />
         <HardwareInTheLoopSection />
         <DeploymentArchitectureSection />

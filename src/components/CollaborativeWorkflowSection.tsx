@@ -2,33 +2,32 @@
 
 import React from 'react';
 import {
-  GitPullRequest,
-  GitBranch,
-  GitMerge,
   ShieldCheck,
   Layers,
   ArrowRight,
   Sliders,
-  Check,
+  CheckCircle2,
+  Sparkles,
+  Database,
   Radio,
-  FileCode,
 } from 'lucide-react';
 
-export const GitWorkflowSection: React.FC = () => {
+export const CollaborativeWorkflowSection: React.FC = () => {
   return (
-    <section id="git-workflow" className="py-24 bg-studio-900/50 border-t border-b border-studio-800/80 relative">
+    <section id="workflow" className="py-24 bg-studio-900/50 border-t border-b border-studio-800/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-800/80 text-blue-300 text-xs font-mono font-semibold mb-3">
-            <GitBranch className="w-3.5 h-3.5" />
+            <Layers className="w-3.5 h-3.5" />
             <span>NON-DESTRUCTIVE DUAL-ARTIFACT MODEL</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-            Music Production Meets Modern Version Control.
+            Music Production Meets Modern Cloud Collaboration.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300">
             Never argue over destructive mixer overwrites again. Syncromancer cleanly decouples your
-            master archival dry recordings from collaborative effect layers.
+            master archival dry recordings from collaborative effect layers with instant Supabase sync
+            and SeaweedFS stem storage.
           </p>
         </div>
 
@@ -45,12 +44,12 @@ export const GitWorkflowSection: React.FC = () => {
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
               Raw vocals, acoustic drums, direct-in bass, and MIDI note streams are sealed in the
-              manifest with cryptographic checksums. They can never be destructively overwritten.
+              Supabase session manifest with cryptographic checksums. They can never be destructively overwritten.
             </p>
             <div className="p-3 bg-studio-900 border border-studio-800 rounded-xl font-mono text-[11px] text-slate-300 flex flex-col gap-1">
               <span className="text-emerald-400 font-bold">tracks/bass/dry.wav</span>
-              <span className="text-slate-500">SHA-256: 7f3a9b1...</span>
-              <span className="text-slate-400 text-[10px]">44.1kHz • 24-bit PCM • Immutable Master</span>
+              <span className="text-slate-500">SeaweedFS OID: 7f3a9b1...</span>
+              <span className="text-slate-400 text-[10px]">44.1kHz • 24-bit PCM • Immutable Master Take</span>
             </div>
           </div>
 
@@ -65,7 +64,7 @@ export const GitWorkflowSection: React.FC = () => {
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
               Collaborators stack non-destructive layers on top: deterministic DSP pedalboards,
-              Cardinal VCV modular racks, or hardware analog re-amps routed through studio gear.
+              Cardinal VCV modular racks, or hardware analog re-amps routed through physical gear.
             </p>
             <div className="p-3 bg-studio-900 border border-studio-800 rounded-xl font-mono text-[11px] text-slate-300 flex flex-col gap-1">
               <span className="text-blue-400 font-bold">+ Deterministic Moog 24dB Filter</span>
@@ -80,43 +79,43 @@ export const GitWorkflowSection: React.FC = () => {
               03
             </div>
             <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-              <GitPullRequest className="w-5 h-5 text-purple-400" />
-              <span>PR Review & A/B Merging</span>
+              <Sliders className="w-5 h-5 text-purple-400" />
+              <span>Live Take Audition & A/B Toggle</span>
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
-              Submit changes via Git Pull Request. Team members audition the PR directly in the browser,
-              toggling instant A/B Dry comparison before merging into the main session.
+              Collaborators preview new takes and effect layers directly in the browser,
+              toggling instant sample-accurate A/B comparisons before committing to the main session.
             </p>
             <div className="p-3 bg-studio-900 border border-studio-800 rounded-xl font-mono text-[11px] text-slate-300 flex flex-col gap-1">
               <div className="flex items-center justify-between text-cyan-300 font-bold">
-                <span>PR #42: Add Plate Reverb</span>
-                <span className="text-emerald-400">Merged</span>
+                <span>Layer: Add Plate Reverb</span>
+                <span className="text-emerald-400">Synced</span>
               </div>
-              <span className="text-slate-400 text-[10px]">Automated Manifest & Stem Verification</span>
+              <span className="text-slate-400 text-[10px]">Real-Time Supabase & SeaweedFS Verification</span>
             </div>
           </div>
         </div>
 
-        {/* Real-time PR Diff Preview Panel */}
+        {/* Real-time Layer Audition Preview Panel */}
         <div className="rounded-2xl border border-studio-800 bg-studio-950 p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-studio-800">
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-xl bg-purple-500/20 text-purple-300 border border-purple-500/30">
-                <GitPullRequest className="w-5 h-5" />
+                <Sliders className="w-5 h-5" />
               </div>
               <div>
                 <h4 className="font-bold text-sm text-white">
-                  Pull Request #42: Outboard Hardware Re-Amp & Moog Ladder Filter
+                  Auditioning Layer: Outboard Hardware Re-Amp & Moog Ladder Filter
                 </h4>
                 <p className="text-xs text-slate-400">
-                  Branch: <span className="font-mono text-purple-300">collaborator/alice/analog-wet-layers</span> &rarr; <span className="font-mono text-cyan-300">main</span>
+                  Collaborator: <span className="font-mono text-purple-300">alice@studio</span> &bull; Session: <span className="font-mono text-cyan-300">syncromancer-odyssey</span>
                 </p>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
               <span className="px-2.5 py-1 rounded-md bg-emerald-950/80 text-emerald-300 border border-emerald-800/80 text-xs font-mono font-semibold">
-                CI Stem Check: 0 Audio Collisions
+                SeaweedFS Stem Check: 0 Audio Collisions
               </span>
             </div>
           </div>
@@ -125,7 +124,7 @@ export const GitWorkflowSection: React.FC = () => {
             {/* Diff Left: Parameters Added */}
             <div className="bg-studio-900 border border-studio-800 rounded-xl p-4">
               <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-3">
-                Deterministic DSP & Outboard Metadata Diff
+                Supabase Layer Manifest & Parameters
               </span>
               <div className="flex flex-col gap-2">
                 <div className="text-emerald-400 bg-emerald-950/30 p-2 rounded border border-emerald-900/50">
@@ -147,7 +146,7 @@ export const GitWorkflowSection: React.FC = () => {
                   Sample-Accurate In-Browser A/B Audition
                 </span>
                 <p className="text-slate-300 text-xs mb-4 font-sans">
-                  The Syncromancer Web Engine routes both the original dry take and the proposed wet PR layer simultaneously with zero phase jitter. Click to A/B toggle seamlessly.
+                  The Syncromancer Web Engine routes both the original dry take and the active wet layer simultaneously with zero phase jitter. Click to A/B toggle seamlessly.
                 </p>
               </div>
 
@@ -159,7 +158,7 @@ export const GitWorkflowSection: React.FC = () => {
                 <ArrowRight className="w-4 h-4 text-slate-500" />
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-cyan-950 border border-cyan-800 text-cyan-300 font-bold">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-                  <span>Active PR Wet Layer</span>
+                  <span>Active Wet Layer</span>
                 </div>
               </div>
             </div>

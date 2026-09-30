@@ -105,7 +105,7 @@ export const PricingCalculator: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Non-destructive Git dual-artifact audio history</span>
+                  <span>Non-destructive dual-artifact session history</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -139,7 +139,7 @@ export const PricingCalculator: React.FC = () => {
               </span>
               <h3 className="text-2xl font-black text-white mb-2">Pro Studio DaaS</h3>
               <p className="text-xs text-slate-300 mb-6">
-                Cloud hosted on <code className="text-cyan-300">portal.syncromancer.com</code> with private repos & SeaweedFS stem storage.
+                Cloud hosted on <code className="text-cyan-300">portal.syncromancer.com</code> with Supabase sync & SeaweedFS stem storage.
               </p>
 
               <div className="flex items-baseline gap-1 mb-6">
@@ -166,7 +166,7 @@ export const PricingCalculator: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span>Automated Git PR audio diff verification</span>
+                  <span>Real-time team layer sync & A/B auditioning</span>
                 </li>
               </ul>
             </div>
@@ -184,20 +184,20 @@ export const PricingCalculator: React.FC = () => {
             </div>
           </div>
 
-          {/* Plan 3: Enterprise Cluster */}
+          {/* Plan 3: Enterprise Studio */}
           <div className="bg-studio-950 border border-studio-800 rounded-3xl p-8 flex flex-col justify-between">
             <div>
               <span className="text-xs font-mono text-purple-400 uppercase font-bold tracking-wider block mb-2">
                 Record Labels & Facilities
               </span>
-              <h3 className="text-2xl font-black text-white mb-2">Enterprise K8s</h3>
+              <h3 className="text-2xl font-black text-white mb-2">Enterprise Studio</h3>
               <p className="text-xs text-slate-400 mb-6">
-                Self-hosted Kubernetes Helm cluster or dedicated cloud infrastructure with LDAP SSO.
+                Dedicated cloud infrastructure with custom SSO, priority audio pipelines, and enterprise SLA.
               </p>
 
               <div className="flex items-baseline gap-1 mb-6">
                 <span className="text-4xl font-black text-white">Custom</span>
-                <span className="text-slate-400 text-xs font-mono">/ volume tiers</span>
+                <span className="text-slate-400 text-xs font-mono">/ tailored volume</span>
               </div>
 
               <ul className="flex flex-col gap-3 text-xs text-slate-300">
@@ -207,15 +207,15 @@ export const PricingCalculator: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>Custom OpenEBS Mayastor / Rook Ceph storage</span>
+                  <span>Dedicated high-throughput audio storage pool</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>Dedicated SeaweedFS storage cluster</span>
+                  <span>Custom seat allocations & multi-room facilities</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>99.99% uptime SLA & 24/7 engineering support</span>
+                  <span>99.99% uptime SLA & 24/7 dedicated engineering support</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-purple-400 shrink-0" />
@@ -226,10 +226,12 @@ export const PricingCalculator: React.FC = () => {
 
             <div className="mt-8">
               <a
-                href="#architecture"
+                href="https://portal.syncromancer.com/contact"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full py-3 rounded-xl bg-studio-900 hover:bg-studio-850 text-purple-300 border border-purple-800/80 font-bold text-xs flex items-center justify-center gap-2 transition-all"
               >
-                <span>Deploy Helm Chart</span>
+                <span>Contact Enterprise</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>

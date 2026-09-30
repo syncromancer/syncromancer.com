@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Syncromancer | DAW as a Service (DaaS) & Git-Native Music Collaboration',
+  title: 'Syncromancer | Collaborative DAW as a Service (DaaS)',
   description:
-    'Studio-grade DAW as a Service. Collaborate through Git Pull Requests with immutable dry stems, deterministic open-source DSP, Cardinal modular racks, and outboard hardware re-amping.',
+    'Studio-grade DAW as a Service. Collaborate in real-time with immutable dry stems, Supabase session sync, SeaweedFS high-throughput audio storage, Cardinal modular synths, and outboard hardware re-amping.',
   keywords: [
     'DAW as a Service',
     'DaaS',
     'Syncromancer',
     'Cloud DAW',
-    'Git for Audio',
-    'Pull Request Music',
+    'Supabase Audio Sync',
+    'SeaweedFS Stem Storage',
     'Open Source Synths',
     'Cardinal Modular',
     'Dexed FM',
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     'Collaborative Audio',
   ],
   openGraph: {
-    title: 'Syncromancer | DAW as a Service (DaaS)',
+    title: 'Syncromancer | Collaborative DAW as a Service (DaaS)',
     description:
-      'The modern cloud DAW for collaborative music production with Git-native workflows, Cardinal modular synths, and enterprise infrastructure.',
+      'The modern cloud DAW for collaborative music production with Supabase session sync, SeaweedFS lossless storage, and Cardinal modular synths.',
     url: 'https://syncromancer.com',
     siteName: 'Syncromancer',
     type: 'website',

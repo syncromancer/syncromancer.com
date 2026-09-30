@@ -76,7 +76,7 @@ export const HardwareInTheLoopSection: React.FC = () => {
               <h3 className="text-lg font-bold text-white mb-2">Studio Gear Documentation</h3>
               <p className="text-sm text-slate-400 leading-relaxed mb-4">
                 Document mic placement (e.g. Shure SM7B + AKG D112), preamp gain staging, and knob
-                positions directly into the Git commit message and layer JSON metadata.
+                positions directly into the Supabase session manifest and layer JSON metadata.
               </p>
             </div>
             <div className="p-3 bg-studio-950 border border-studio-800 rounded-xl font-mono text-[11px] text-rose-300">

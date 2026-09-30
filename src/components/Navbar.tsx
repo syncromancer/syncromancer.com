@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import {
   Music,
-  GitPullRequest,
   Cpu,
   Layers,
   Server,
@@ -43,8 +42,8 @@ export const Navbar: React.FC = () => {
             <a href="#features" className="hover:text-cyan-400 transition-colors">
               Features
             </a>
-            <a href="#git-workflow" className="hover:text-cyan-400 transition-colors">
-              Git PR Workflow
+            <a href="#workflow" className="hover:text-cyan-400 transition-colors">
+              Workflow
             </a>
             <a href="#synths-effects" className="hover:text-cyan-400 transition-colors">
               Synths & Pedals
@@ -62,13 +61,6 @@ export const Navbar: React.FC = () => {
 
           {/* CTA Actions */}
           <div className="hidden sm:flex items-center gap-3">
-            <a
-              href="#architecture"
-              className="px-3 py-1.5 rounded-lg border border-studio-700 hover:border-studio-600 bg-studio-900/80 text-slate-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-all"
-            >
-              <Terminal className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Helm Chart</span>
-            </a>
             <a
               href="https://portal.syncromancer.com/"
               target="_blank"
@@ -103,11 +95,11 @@ export const Navbar: React.FC = () => {
             Features
           </a>
           <a
-            href="#git-workflow"
+            href="#workflow"
             onClick={() => setMobileMenuOpen(false)}
             className="py-1 text-slate-300 hover:text-cyan-400"
           >
-            Git PR Workflow
+            Workflow
           </a>
           <a
             href="#synths-effects"
@@ -128,7 +120,7 @@ export const Navbar: React.FC = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="py-1 text-slate-300 hover:text-cyan-400"
           >
-            Kubernetes Helm & Storage
+            Architecture
           </a>
           <a
             href="#pricing"
