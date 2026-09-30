@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   Music,
   Cpu,
@@ -11,6 +12,7 @@ import {
   Menu,
   X,
   Terminal,
+  Sparkles,
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -22,16 +24,23 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo & Brand */}
           <div className="flex items-center gap-3">
-            <a href="#" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-all">
-                <span className="font-black text-xl text-white tracking-tighter">S</span>
+            <a href="#" className="flex items-center gap-3 group">
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden ring-1 ring-cyan-500/50 shadow-lg shadow-cyan-500/30 group-hover:scale-105 group-hover:ring-cyan-300 transition-all bg-black shrink-0">
+                <Image
+                  src="/syncromancer-emblem.jpg"
+                  alt="Syncromancer Emblem"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
               <div>
                 <span className="font-extrabold text-base tracking-wide text-white block leading-tight">
                   Syncromancer
                 </span>
                 <span className="text-[10px] font-mono text-cyan-400 tracking-wider block">
-                  DAW AS A SERVICE
+                  RAISING RHYTHMS FROM THE DEAD
                 </span>
               </div>
             </a>
@@ -39,8 +48,9 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
-            <a href="#features" className="hover:text-cyan-400 transition-colors">
-              Features
+            <a href="#arcane" className="hover:text-cyan-400 transition-colors flex items-center gap-1 text-purple-300 font-semibold">
+              <Sparkles className="w-3 h-3 text-purple-400" />
+              <span>Arcane Engine</span>
             </a>
             <a href="#workflow" className="hover:text-cyan-400 transition-colors">
               Workflow
@@ -88,11 +98,12 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="sm:hidden bg-studio-900 border-b border-studio-800 px-4 pt-3 pb-6 flex flex-col gap-3 text-sm">
           <a
-            href="#features"
+            href="#arcane"
             onClick={() => setMobileMenuOpen(false)}
-            className="py-1 text-slate-300 hover:text-cyan-400"
+            className="py-1 text-purple-300 hover:text-cyan-400 font-semibold flex items-center gap-1.5"
           >
-            Features
+            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+            <span>Arcane Engine</span>
           </a>
           <a
             href="#workflow"

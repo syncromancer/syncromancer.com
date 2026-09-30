@@ -29,29 +29,28 @@ export const HeroSection: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span>DAW AS A SERVICE (DaaS)</span>
           </div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-800/80 text-purple-300 text-xs font-mono font-semibold shadow-inner">
+            <Sparkles className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
+            <span>RAISING RHYTHMS FROM THE DEAD</span>
+          </div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-studio-900 border border-studio-800 text-slate-300 text-xs font-mono">
             <Layers className="w-3.5 h-3.5 text-blue-400" />
             <span>NON-DESTRUCTIVE COLLABORATION</span>
-          </div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-studio-900 border border-studio-800 text-slate-300 text-xs font-mono">
-            <Cpu className="w-3.5 h-3.5 text-rose-400" />
-            <span>CARDINAL MODULAR & DEXED FM</span>
           </div>
         </div>
 
         {/* Headline */}
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.08]">
-            The Collaborative{' '}
-            <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">
-              DAW as a Service
-            </span>{' '}
-            for Real Musicians.
+            Raise Your Rhythms{' '}
+            <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400 bg-clip-text text-transparent">
+              From The Dead.
+            </span>
           </h1>
           <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Record immutable archival dry stems. Stack open-source DSP pedalboards, Cardinal modular
-            racks, and analog outboard re-amps. Collaborate in real-time with sample-accurate latency
-            compensation, Supabase session sync, and high-throughput SeaweedFS storage.
+            Where technological precision meets arcane sonic conjuration. Syncromancer breathes new
+            life into dormant takes, lost stems, and abandoned mixes with real-time Supabase sync,
+            high-throughput SeaweedFS storage, Cardinal modular alchemy, and outboard analog re-amping.
           </p>
 
           {/* Primary CTA Buttons */}
@@ -64,6 +63,14 @@ export const HeroSection: React.FC = () => {
             >
               <span>Launch Studio Portal</span>
               <ArrowRight className="w-4 h-4" />
+            </a>
+
+            <a
+              href="#arcane"
+              className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-purple-950/60 hover:bg-purple-900/80 text-purple-200 border border-purple-700/80 hover:border-purple-500 font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md shadow-purple-950/40"
+            >
+              <Sparkles className="w-4 h-4 text-purple-400" />
+              <span>The Arcane Engine</span>
             </a>
 
             <a

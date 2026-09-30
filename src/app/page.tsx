@@ -3,6 +3,7 @@
 import React from 'react';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
+import { ArcaneNecromancySection } from '@/components/ArcaneNecromancySection';
 import { CollaborativeWorkflowSection } from '@/components/CollaborativeWorkflowSection';
 import { HardwareInTheLoopSection } from '@/components/HardwareInTheLoopSection';
 import { ModularSynthsSection } from '@/components/ModularSynthsSection';
@@ -17,6 +18,7 @@ export default function HomePage() {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
+        <ArcaneNecromancySection />
         <CollaborativeWorkflowSection />
         <ModularSynthsSection />
         <HardwareInTheLoopSection />

@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { ExternalLink, Terminal, ShieldCheck, Heart } from 'lucide-react';
+import Image from 'next/image';
+import { ExternalLink, Terminal, ShieldCheck, Heart, Sparkles } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -10,15 +11,24 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Col 1: Brand */}
           <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow">
-                <span className="font-black text-sm text-white">S</span>
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-8 h-8 rounded-lg overflow-hidden ring-1 ring-cyan-500/50 shadow-md shadow-cyan-500/20 bg-black shrink-0">
+                <Image
+                  src="/syncromancer-emblem.jpg"
+                  alt="Syncromancer Emblem"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <span className="font-bold text-white text-sm">Syncromancer</span>
+              <div>
+                <span className="font-bold text-white text-sm block leading-none">Syncromancer</span>
+                <span className="text-[9px] font-mono text-cyan-400 tracking-wider">RAISING RHYTHMS FROM THE DEAD</span>
+              </div>
             </div>
             <p className="text-slate-400 leading-relaxed text-[11px]">
               DAW as a Service (DaaS) for collaborative music engineering. Non-destructive audio
-              layering, Supabase session sync, and SeaweedFS stem storage.
+              layering, Supabase session sync, and SeaweedFS stem storage. Raising dormant rhythms into living masters.
             </p>
             <div className="flex items-center gap-2 text-[10px] text-cyan-400 font-mono">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
@@ -82,6 +92,12 @@ export const Footer: React.FC = () => {
               Studio Platform
             </span>
             <ul className="flex flex-col gap-2">
+              <li>
+                <a href="#arcane" className="hover:text-cyan-400 transition-colors text-purple-300 font-semibold flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-purple-400" />
+                  <span>Arcane Rhythm Engine</span>
+                </a>
+              </li>
               <li>
                 <a href="#architecture" className="hover:text-cyan-400 transition-colors">
                   Cloud Audio Architecture
