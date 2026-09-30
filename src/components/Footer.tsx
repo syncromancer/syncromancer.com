@@ -121,36 +121,76 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4: Open Source */}
+          {/* Col 4: Open Source & AI */}
           <div>
             <span className="font-bold text-white text-xs uppercase tracking-wider block mb-3">
-              Open Source Engines
+              Open Source &amp; AI
             </span>
             <ul className="flex flex-col gap-2">
               <li>
                 <a
-                  href="https://github.com/DISTRHO/Cardinal"
+                  href="https://cardinal.kx.studio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-cyan-400 transition-colors flex items-center gap-1.5"
+                  className="hover:text-cyan-400 transition-colors flex items-center gap-1.5 text-rose-300 font-semibold"
                 >
-                  <span>Cardinal Modular (VCV)</span>
+                  <span>The Mighty Cardinal</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
               <li>
-                <a href="#synths-effects" className="hover:text-cyan-400 transition-colors">
-                  Dexed FM Synthesizer
+                <a
+                  href="https://github.com/falkTX/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cyan-400 transition-colors flex items-center gap-1.5"
+                >
+                  <span>FalkTX (Filipe Coelho)</span>
+                  <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
               <li>
-                <a href="#synths-effects" className="hover:text-cyan-400 transition-colors">
-                  Dattorro Plate Reverb & Moog DSP
+                <a
+                  href="https://github.com/KXStudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cyan-400 transition-colors flex items-center gap-1.5"
+                >
+                  <span>KXStudio Audio Tools</span>
+                  <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
               <li>
-                <a href="#workflow" className="hover:text-cyan-400 transition-colors">
-                  Supabase & SeaweedFS Storage
+                <a
+                  href="https://distrho.sourceforge.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cyan-400 transition-colors flex items-center gap-1.5"
+                >
+                  <span>DISTRHO (distrho.sf.net)</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/DISTRHO/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cyan-400 transition-colors flex items-center gap-1.5"
+                >
+                  <span>DISTRHO Plugins &amp; DPF</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/magenta/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cyan-400 transition-colors flex items-center gap-1.5 text-emerald-300 font-semibold"
+                >
+                  <span>Google Magenta AI</span>
+                  <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
             </ul>

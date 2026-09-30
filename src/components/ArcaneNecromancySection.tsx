@@ -73,11 +73,11 @@ export const ArcaneNecromancySection: React.FC = () => {
                 <div className="flex items-center gap-2 text-slate-300">
                   <span className="text-cyan-400 font-bold">conjure://rhythm-matrix</span>
                   <span className="text-slate-500">&bull;</span>
-                  <span className="text-emerald-400">Drums Reanimated (48 Audio Transients)</span>
+                  <span className="text-emerald-400">Google Magenta AI (Neural Drums Synced)</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-purple-300">
                   <Flame className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
-                  <span>SeaweedFS Stream: Active</span>
+                  <span>Cardinal Modular: 96kHz</span>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ export const ArcaneNecromancySection: React.FC = () => {
             {/* Caption */}
             <div className="mt-4 px-2 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
               <p className="italic">
-                The Rhythm Necromancer summons spectral drum waveforms and modular voltage from the deep digital ether.
+                The Rhythm Necromancer summons spectral drum waveforms, Cardinal modular voltage (FalkTX), and Google Magenta neural grooves from the digital ether.
               </p>
               <span className="font-mono text-[11px] text-cyan-400">Fig 1.1: The Resurrection Sanctum</span>
             </div>
@@ -163,16 +163,14 @@ export const ArcaneNecromancySection: React.FC = () => {
               <Cpu className="w-6 h-6 text-cyan-400" />
             </div>
             <h4 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-              <span>II. Occult Modular Alchemy</span>
+              <span>II. Occult Modular Alchemy & AI</span>
             </h4>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
-              Channel the otherworldly polyphony of DISTRHO Cardinal (VCV Rack), 6-operator Dexed FM
-              frequencies, TR-808 analog beats, and Moog 24dB ladder filters. Weave sonic spells with
-              sample-accurate Web Audio Modules.
+              Channel the otherworldly modular voltage of the mighty <a href="https://cardinal.kx.studio" target="_blank" rel="noopener noreferrer" className="text-rose-400 underline font-bold hover:text-rose-300">Cardinal</a> (by FalkTX / DISTRHO) paired with <a href="https://github.com/magenta/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 underline font-bold hover:text-emerald-300">Google Magenta</a> neural AI. Morph latent space drum grooves and resurrect dormant musical ideas into full polyphonic arrangements.
             </p>
             <div className="text-xs font-mono text-cyan-300 flex items-center gap-1.5">
               <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span>Full Cardinal Modular Racks in Browser</span>
+              <span>Cardinal Modular WASM & Magenta RNN</span>
             </div>
           </div>
 

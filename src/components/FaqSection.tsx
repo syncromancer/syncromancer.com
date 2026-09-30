@@ -26,8 +26,12 @@ const faqs: FaqItem[] = [
     a: 'When an engineer routes an archival dry stem out through their physical audio interface into hardware gear (e.g. an Ampeg tube amp or Roland Space Echo tape loop), they record the return back into Syncromancer. The engineer records the round-trip latency compensation (e.g. 4.2ms) into the layer metadata, ensuring the re-amp sits in phase with the rest of the mix.',
   },
   {
-    q: 'Are the virtual synthesizers and studio effects truly open source?',
-    a: 'Yes! Syncromancer features Cardinal (DISTRHO virtual modular synthesizer based on VCV Rack), Dexed FM (Yamaha DX7 emulation), TR-808 analog drums, and an open-source pedalboard suite (Dattorro Plate Reverb, Moog 24dB Ladder Lowpass, Ping-Pong Delay, Bitcrusher, Tube Overdrive) and WAM 2.0 Web Audio Modules.',
+    q: 'How are FalkTX, Cardinal, KXStudio, and DISTRHO integrated?',
+    a: 'Syncromancer integrates the groundbreaking open-source audio DSP work of Filipe Coelho (FalkTX). We embed the mighty Cardinal virtual modular synthesizer (cardinal.kx.studio) with VCV Rack compatibility, alongside the DISTRHO Plugin Framework (DPF) and KXStudio audio tooling for native WebAssembly DSP with zero latency.',
+  },
+  {
+    q: 'How does Google Magenta AI assist with music production?',
+    a: 'Syncromancer embeds Google Magenta machine learning models (such as Drums RNN, MusicVAE, and Groove MIDI) directly into the DAW. Magenta serves as an intelligent musical co-pilot: generating neural drum fills, interpolating polyphonic melodies, and humanizing MIDI velocity and micro-timing without cloud round-trip delay.',
   },
   {
     q: 'Where is the active studio app located?',

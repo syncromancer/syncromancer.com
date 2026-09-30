@@ -56,7 +56,7 @@ export const Navbar: React.FC = () => {
               Workflow
             </a>
             <a href="#synths-effects" className="hover:text-cyan-400 transition-colors">
-              Synths & Pedals
+              Cardinal &amp; AI
             </a>
             <a href="#hardware" className="hover:text-cyan-400 transition-colors">
               Hardware Re-Amp
@@ -117,7 +117,7 @@ export const Navbar: React.FC = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="py-1 text-slate-300 hover:text-cyan-400"
           >
-            Synths & Pedals
+            Cardinal &amp; AI
           </a>
           <a
             href="#hardware"

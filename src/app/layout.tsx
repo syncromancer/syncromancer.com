@@ -5,16 +5,20 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://syncromancer.com'),
   title: 'Syncromancer | Collaborative DAW as a Service (DaaS)',
   description:
-    'Studio-grade DAW as a Service. Collaborate in real-time with immutable dry stems, Supabase session sync, SeaweedFS high-throughput audio storage, Cardinal modular synths, and outboard hardware re-amping.',
+    'Studio-grade DAW as a Service. Raising rhythms from the dead with immutable dry stems, Supabase session sync, SeaweedFS audio storage, FalkTX KXStudio & DISTRHO engines, the mighty Cardinal modular synth, Google Magenta AI assistance, and outboard hardware re-amping.',
   keywords: [
     'DAW as a Service',
     'DaaS',
     'Syncromancer',
     'Cloud DAW',
+    'FalkTX',
+    'KXStudio',
+    'DISTRHO',
+    'Cardinal Modular',
+    'Google Magenta',
+    'Magenta AI',
     'Supabase Audio Sync',
     'SeaweedFS Stem Storage',
-    'Open Source Synths',
-    'Cardinal Modular',
     'Dexed FM',
     'Hardware Re-Amping',
     'Collaborative Audio',
@@ -29,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Syncromancer | Raising Rhythms From The Dead',
     description:
-      'The modern cloud DAW for collaborative music production — raising rhythms from the dead with Supabase session sync, SeaweedFS lossless storage, and Cardinal modular synths.',
+      'The modern cloud DAW for collaborative music production — featuring FalkTX KXStudio & DISTRHO, the mighty Cardinal modular synth, and Google Magenta AI assistance.',
     url: 'https://syncromancer.com',
     siteName: 'Syncromancer',
     images: [

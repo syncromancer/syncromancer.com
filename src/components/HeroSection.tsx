@@ -33,9 +33,13 @@ export const HeroSection: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
             <span>RAISING RHYTHMS FROM THE DEAD</span>
           </div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-studio-900 border border-studio-800 text-slate-300 text-xs font-mono">
-            <Layers className="w-3.5 h-3.5 text-blue-400" />
-            <span>NON-DESTRUCTIVE COLLABORATION</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-950/80 border border-rose-800/80 text-rose-300 text-xs font-mono">
+            <Cpu className="w-3.5 h-3.5 text-rose-400" />
+            <span>FALKTX CARDINAL & DISTRHO</span>
+          </div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/80 text-emerald-300 text-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+            <span>GOOGLE MAGENTA AI</span>
           </div>
         </div>
 
@@ -48,9 +52,9 @@ export const HeroSection: React.FC = () => {
             </span>
           </h1>
           <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Where technological precision meets arcane sonic conjuration. Syncromancer breathes new
-            life into dormant takes, lost stems, and abandoned mixes with real-time Supabase sync,
-            high-throughput SeaweedFS storage, Cardinal modular alchemy, and outboard analog re-amping.
+            Where technological precision meets arcane sonic conjuration. Syncromancer integrates FalkTX&apos;s
+            legendary KXStudio &amp; DISTRHO audio engines — including the mighty Cardinal modular synth — alongside
+            Google Magenta neural AI assistance, real-time Supabase sync, and SeaweedFS stem storage.
           </p>
 
           {/* Primary CTA Buttons */}
@@ -240,6 +244,32 @@ export const HeroSection: React.FC = () => {
                 <span className="text-slate-400">0.0 dB</span>
               </div>
             </div>
+
+            {/* Track 5: Magenta AI Rhythm Assist */}
+            <div className="rounded-xl border border-emerald-900/50 bg-studio-900/80 p-3 flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3 w-48 shrink-0">
+                <div className="w-2.5 h-10 rounded-full bg-emerald-500 shrink-0" />
+                <div>
+                  <span className="font-bold text-xs text-white block">Magenta Neural Groove</span>
+                  <span className="text-[10px] text-emerald-300/80 font-mono">Drums RNN Co-Pilot</span>
+                </div>
+              </div>
+              <div className="flex-1 h-10 bg-studio-950/80 rounded-lg border border-studio-800/80 px-2 flex items-center gap-1 overflow-hidden">
+                {Array.from({ length: 48 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-1 bg-emerald-400/70 rounded-full"
+                    style={{ height: `${20 + ((i * 17) % 65)}%` }}
+                  />
+                ))}
+              </div>
+              <div className="flex items-center gap-2 text-[10px] font-mono shrink-0">
+                <span className="px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">
+                  AI ASSIST
+                </span>
+                <span className="text-slate-400">-0.5 dB</span>
+              </div>
+            </div>
           </div>
 
           {/* Footer Bar of Mockup */}
@@ -247,10 +277,12 @@ export const HeroSection: React.FC = () => {
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1 text-emerald-400">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                Audio Engine: 44.1kHz Stereo 64-bit Float
+                Cardinal &amp; DISTRHO Engine: Active
               </span>
               <span className="hidden sm:inline text-slate-500">|</span>
-              <span className="hidden sm:inline text-slate-400">Master Limiter: -0.5 dB</span>
+              <span className="hidden sm:inline text-cyan-400">Google Magenta: Inference Ready</span>
+              <span className="hidden sm:inline text-slate-500">|</span>
+              <span className="hidden sm:inline text-slate-400">Limiter: -0.5 dB</span>
             </div>
             <div className="text-cyan-400 font-bold">
               Ready for Collaboration &rarr;
