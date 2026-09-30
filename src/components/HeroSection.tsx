@@ -51,7 +51,7 @@ export const HeroSection: React.FC = () => {
           </h1>
           <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
             Record immutable archival dry stems. Stack open-source DSP pedalboards, Cardinal modular
-            racks, and analog outboard re-amps. Collaborate through GitHub Pull Requests with
+            racks, and analog outboard re-amps. Collaborate through Git Pull Requests with
             sample-accurate latency compensation and zero cloud lock-in.
           </p>
 

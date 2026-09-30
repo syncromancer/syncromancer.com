@@ -68,7 +68,7 @@ export const DeploymentArchitectureSection: React.FC = () => {
               <p className="text-xs text-slate-400 leading-relaxed">
                 Next.js full-stack studio portal hosted at{' '}
                 <code className="text-cyan-300">portal.syncromancer.com</code>. Manages collaborative
-                sessions, seat billing, GitHub webhooks, and team access.
+                sessions, seat billing, Git webhooks, and team access.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-blue-400">

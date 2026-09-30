@@ -62,56 +62,8 @@ export const PricingCalculator: React.FC = () => {
           </div>
         </div>
 
-        {/* 3 Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {/* Plan 1: Free Open Source */}
-          <div className="bg-studio-950 border border-studio-800 rounded-3xl p-8 flex flex-col justify-between">
-            <div>
-              <span className="text-xs font-mono text-cyan-400 uppercase font-bold tracking-wider block mb-2">
-                Open Source & Indie
-              </span>
-              <h3 className="text-2xl font-black text-white mb-2">GitHub Pages</h3>
-              <p className="text-xs text-slate-400 mb-6">
-                100% static web DAW running client-side with public GitHub repositories.
-              </p>
-
-              <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-4xl font-black text-white">$0</span>
-                <span className="text-slate-400 text-xs font-mono">/ forever free</span>
-              </div>
-
-              <ul className="flex flex-col gap-3 text-xs text-slate-300">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Public GitHub repository collaboration</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Immutable dry stems & A/B listening</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Open-source studio pedalboards & synths</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Local scratch directory support</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mt-8">
-              <a
-                href="https://portal.syncromancer.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3 rounded-xl bg-studio-900 hover:bg-studio-850 text-white border border-studio-700 font-bold text-xs flex items-center justify-center gap-2 transition-all"
-              >
-                <span>Try In Browser</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
+        {/* Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8 mb-16">
 
           {/* Plan 2: Pro Studio (Featured) */}
           <div className="bg-gradient-to-b from-studio-900 to-studio-950 border-2 border-cyan-500/80 rounded-3xl p-8 flex flex-col justify-between relative shadow-2xl shadow-cyan-500/10">
@@ -152,7 +104,7 @@ export const PricingCalculator: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span>Automated GitHub PR audio diff verification</span>
+                  <span>Automated Git PR audio diff verification</span>
                 </li>
               </ul>
             </div>

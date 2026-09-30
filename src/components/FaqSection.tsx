@@ -31,7 +31,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: 'Where is the active studio app located?',
-    a: 'The live DAW portal is hosted at https://portal.syncromancer.com/. You can sign in with your enterprise credentials, GitHub account, or launch a sandbox session immediately in your browser.',
+    a: 'The live DAW portal is hosted at https://portal.syncromancer.com/. You can sign in with your enterprise credentials, SSO / OAuth provider, or launch a sandbox session immediately in your browser.',
   },
 ];
 
