@@ -203,10 +203,19 @@ export const Footer: React.FC = () => {
             <div>
               &copy; {new Date().getFullYear()} Syncromancer. DAW as a Service. All rights reserved.
             </div>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4">
               <span className="text-slate-400">Public Portal: https://portal.syncromancer.com/</span>
               <a href="#credits" className="hover:text-cyan-400 transition-colors">
                 Open Source Credits &amp; Licenses
+              </a>
+              <span className="text-slate-600">&bull;</span>
+              <a
+                href="/THIRD_PARTY_NOTICES.txt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-400 transition-colors"
+              >
+                Third-Party Notices
               </a>
             </div>
           </div>
