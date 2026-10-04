@@ -10,6 +10,7 @@ import { ModularSynthsSection } from '@/components/ModularSynthsSection';
 import { DeploymentArchitectureSection } from '@/components/DeploymentArchitectureSection';
 import { PricingCalculator } from '@/components/PricingCalculator';
 import { FaqSection } from '@/components/FaqSection';
+import { CreditsLicensesSection } from '@/components/CreditsLicensesSection';
 import { Footer } from '@/components/Footer';
 
 export default function HomePage() {
@@ -25,6 +26,7 @@ export default function HomePage() {
         <DeploymentArchitectureSection />
         <PricingCalculator />
         <FaqSection />
+        <CreditsLicensesSection />
       </main>
       <Footer />
     </div>

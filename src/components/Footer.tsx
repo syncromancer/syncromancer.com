@@ -204,7 +204,9 @@ export const Footer: React.FC = () => {
           </div>
           <div className="flex items-center gap-6">
             <span className="text-slate-400">Public Portal: https://portal.syncromancer.com/</span>
-            <span>MIT License</span>
+            <a href="#credits" className="hover:text-cyan-400 transition-colors">
+              Open Source Credits &amp; Licenses
+            </a>
           </div>
         </div>
       </div>
