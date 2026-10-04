@@ -67,6 +67,9 @@ export const Navbar: React.FC = () => {
             <a href="#pricing" className="hover:text-cyan-400 transition-colors">
               Pricing
             </a>
+            <a href="#credits" className="hover:text-cyan-400 transition-colors text-slate-300">
+              Credits &amp; Licenses
+            </a>
           </div>
 
           {/* CTA Actions */}
@@ -139,6 +142,13 @@ export const Navbar: React.FC = () => {
             className="py-1 text-slate-300 hover:text-cyan-400"
           >
             Pricing
+          </a>
+          <a
+            href="#credits"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-1 text-slate-300 hover:text-cyan-400"
+          >
+            Credits &amp; Licenses
           </a>
           <div className="pt-2 border-t border-studio-800 flex flex-col gap-2">
             <a
