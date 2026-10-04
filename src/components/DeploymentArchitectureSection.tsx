@@ -38,37 +38,39 @@ export const DeploymentArchitectureSection: React.FC = () => {
                 <Cpu className="w-5 h-5" />
               </div>
               <span className="text-[10px] font-mono text-cyan-400 uppercase font-bold tracking-wider block mb-1">
-                Tier 1: Edge & Client
+                Tier 1: Client Edge (Permissive)
               </span>
-              <h3 className="text-base font-bold text-white mb-2">Web Audio & WASM</h3>
+              <h3 className="text-base font-bold text-white mb-2">Web Audio &amp; Yjs CRDT</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                64-bit float multi-track mixing, offline buffer rendering, WebAssembly Cardinal modular
-                engine, and zero-latency audio worklets directly in Chrome, Firefox, or Safari.
+                64-bit float multi-track mixing, Tone.js transport, WAM 2.0 / CLAP plugin hosts,
+                and Google Magenta neural models running locally. 100% permissive (MIT/Apache)—zero GPL code is shipped to your browser.
               </p>
             </div>
-            <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-slate-400">
-              Zero native plugins required
+            <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-cyan-400">
+              Clean client bundle &bull; 0% Copyleft
             </div>
           </div>
 
-          {/* Tier 2: DaaS Portal */}
-          <div className="bg-studio-900 border border-studio-800 rounded-2xl p-6 flex flex-col justify-between">
+          {/* Tier 2: Server-Side Carla Render Cluster */}
+          <div className="bg-studio-900 border border-rose-900/40 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute top-0 right-0 px-2 py-0.5 bg-rose-950 text-rose-300 border-b border-l border-rose-800/60 font-mono text-[9px] uppercase font-bold rounded-bl">
+              Carla Cloud DSP
+            </div>
             <div>
-              <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center mb-4">
+              <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-500/20 flex items-center justify-center mb-4">
                 <Server className="w-5 h-5" />
               </div>
-              <span className="text-[10px] font-mono text-blue-400 uppercase font-bold tracking-wider block mb-1">
-                Tier 2: Control Plane
+              <span className="text-[10px] font-mono text-rose-400 uppercase font-bold tracking-wider block mb-1">
+                Tier 2: Cloud Render Nodes
               </span>
-              <h3 className="text-base font-bold text-white mb-2">Portal App Engine</h3>
+              <h3 className="text-base font-bold text-white mb-2">Headless Carla Host</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Next.js full-stack studio portal hosted at{' '}
-                <code className="text-cyan-300">portal.syncromancer.com</code>. Manages collaborative
-                sessions, seat billing, webhook notifications, and team access.
+                Containerized headless Carla (by FalkTX) audio nodes running all GPL/copyleft engines
+                (Cardinal modular, Surge XT, Vital, ZynAddSubFX, Demucs). Renders lossless audio layers server-side directly to SeaweedFS.
               </p>
             </div>
-            <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-blue-400">
-              Auto-scales with high availability
+            <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-rose-400">
+              Isolated Linux render workers
             </div>
           </div>
 
@@ -79,16 +81,16 @@ export const DeploymentArchitectureSection: React.FC = () => {
                 <HardDrive className="w-5 h-5" />
               </div>
               <span className="text-[10px] font-mono text-purple-400 uppercase font-bold tracking-wider block mb-1">
-                Tier 3: Audio Storage
+                Tier 3: Distributed Storage
               </span>
               <h3 className="text-base font-bold text-white mb-2">SeaweedFS Cluster</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
                 High-throughput distributed object store with master, filer, and volume nodes.
-                Delivers blazingly fast seek times and sequential reads for multi-gigabyte 24-bit/96kHz stems.
+                Delivers blazingly fast seek times and sequential reads for multi-gigabyte 24-bit/96kHz stems and Carla bounce takes.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-purple-400">
-              O(1) disk lookups & POSIX filer
+              O(1) disk lookups &amp; POSIX filer
             </div>
           </div>
 
@@ -99,16 +101,16 @@ export const DeploymentArchitectureSection: React.FC = () => {
                 <Lock className="w-5 h-5" />
               </div>
               <span className="text-[10px] font-mono text-emerald-400 uppercase font-bold tracking-wider block mb-1">
-                Tier 4: Enterprise Identity
+                Tier 4: Enterprise State
               </span>
-              <h3 className="text-base font-bold text-white mb-2">LDAP & Supabase</h3>
+              <h3 className="text-base font-bold text-white mb-2">Supabase &amp; LDAP</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Enterprise Active Directory / OpenLDAP group mapping to DAW roles (Owner, Engineer,
-                Contributor, Guest), paired with Supabase PostgreSQL for real-time session state, manifests, and role permissions.
+                PostgreSQL session manifests, layer parameter JSON, Yjs live awareness sync, and enterprise
+                LDAP/OAuth group mapping to DAW roles with immutable SHA-256 audit guarantees.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-emerald-400">
-              Enterprise RBAC & TLS 1.3
+              Enterprise RBAC &amp; Realtime sync
             </div>
           </div>
         </div>

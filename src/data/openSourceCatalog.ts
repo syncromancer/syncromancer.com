@@ -15,42 +15,43 @@ export const TIER_META: Record<
 > = {
   foundation: {
     title: 'Foundation Engines',
-    blurb: 'The projects Syncromancer is built on. Always present.',
+    blurb:
+      'The core architectural pillars of Syncromancer. Permissive client modules run in-browser; copyleft engines (Cardinal, Dexed) execute via server-side headless Carla nodes.',
     optIn: false,
   },
   core: {
     title: 'Core Libraries (Permissive)',
     blurb:
-      'MIT / Apache / BSD licensed. Bundled in the studio by default with no usage restrictions.',
+      'MIT / Apache / BSD licensed. Bundled in the studio client by default with zero usage or copyleft restrictions.',
     optIn: false,
   },
   server: {
-    title: 'Cloud Processing Services',
+    title: 'Cloud Processing & Headless Carla Host',
     blurb:
-      'Run on Syncromancer servers only. Nothing from these projects is shipped to your browser.',
+      'Run exclusively on Syncromancer cloud render nodes. Carla hosts plugin graphs and offline bounce jobs; nothing is distributed to your browser.',
     optIn: false,
   },
   gpl: {
-    title: 'Optional Engines (GPL / LGPL)',
+    title: 'Server-Side Carla Render Engines (GPL / LGPL)',
     blurb:
-      'Powerful copyleft instruments and effects. Off by default; you choose which to enable. Source is available under each project\u2019s license.',
+      'All copyleft instruments and effects run in isolated headless Carla render containers on our Linux cloud. Renders directly into SeaweedFS stems—zero GPL code is shipped to your client browser.',
     optIn: true,
   },
   restricted: {
     title: 'Optional Experimental (AGPL / Unmaintained)',
     blurb:
-      'Stricter licenses or projects that are archived or no longer maintained. Off by default and enabled only at your explicit request.',
+      'Stricter licenses or projects that are archived upstream. Off by default and enabled only at your explicit request.',
     optIn: true,
   },
 };
 
 export const CATALOG: CatalogEntry[] = [
   // Foundation
-  { name: 'Cardinal', url: 'https://cardinal.kx.studio', license: 'GPL-3.0', tier: 'foundation', role: 'Modular synthesizer (VCV Rack based)' },
-  { name: 'DISTRHO / DPF', url: 'https://distrho.sourceforge.io', license: 'ISC / GPL (per plugin)', tier: 'foundation', role: 'Plugin framework and classic plugins', note: 'Licenses vary by individual plugin.' },
-  { name: 'KXStudio', url: 'https://github.com/KXStudio', license: 'GPL (per project)', tier: 'foundation', role: 'Audio tooling and routing' },
-  { name: 'Dexed', url: 'https://github.com/asb2m10/dexed', license: 'GPL-3.0', tier: 'foundation', role: 'DX7 FM synthesizer' },
-  { name: 'Google Magenta', url: 'https://github.com/magenta/', license: 'Apache-2.0', tier: 'foundation', role: 'AI rhythm and melody assistance' },
+  { name: 'Cardinal', url: 'https://cardinal.kx.studio', license: 'GPL-3.0', tier: 'foundation', role: 'Modular synthesizer (VCV Rack based)', note: 'Runs in headless server-side Carla workers; renders lossless stems into SeaweedFS.' },
+  { name: 'DISTRHO / DPF', url: 'https://distrho.sourceforge.io', license: 'ISC / GPL (per plugin)', tier: 'foundation', role: 'Plugin framework and classic plugins', note: 'DPF client wrapper with server-side Carla render pipeline.' },
+  { name: 'KXStudio', url: 'https://github.com/KXStudio', license: 'GPL (per project)', tier: 'foundation', role: 'Audio tooling and routing', note: 'Powers the server-side Carla cloud routing infrastructure.' },
+  { name: 'Dexed', url: 'https://github.com/asb2m10/dexed', license: 'GPL-3.0', tier: 'foundation', role: 'DX7 FM synthesizer', note: 'Server-side Carla render worker with zero client binary distribution.' },
+  { name: 'Google Magenta', url: 'https://github.com/magenta/', license: 'Apache-2.0', tier: 'foundation', role: 'AI rhythm and melody assistance', note: 'In-browser TensorFlow.js / ONNX neural inference.' },
 
   // Core (permissive)
   { name: 'Tone.js', url: 'https://github.com/Tonejs/Tone.js', license: 'MIT', tier: 'core', role: 'Transport, scheduling, synths and effects' },
@@ -68,23 +69,23 @@ export const CATALOG: CatalogEntry[] = [
   { name: 'OpenSheetMusicDisplay', url: 'https://github.com/opensheetmusicdisplay/opensheetmusicdisplay', license: 'BSD-3-Clause', tier: 'core', role: 'Notation rendering' },
 
   // Server-side only
-  { name: 'Demucs', url: 'https://github.com/facebookresearch/demucs', license: 'MIT', tier: 'server', role: 'AI stem separation', note: 'Repository is archived; pinned to a vetted release.' },
-  { name: 'Spleeter', url: 'https://github.com/deezer/spleeter', license: 'MIT', tier: 'server', role: 'Stem separation' },
-  { name: 'Carla', url: 'https://github.com/falkTX/Carla', license: 'GPL-2.0+', tier: 'server', role: 'Server-side plugin host for cloud rendering' },
-  { name: 'Rubber Band', url: 'https://github.com/breakfastquay/rubberband', license: 'GPL-2.0 (commercial available)', tier: 'server', role: 'Time-stretch and pitch-shift' },
+  { name: 'Demucs', url: 'https://github.com/facebookresearch/demucs', license: 'MIT', tier: 'server', role: 'AI stem separation', note: 'Runs in GPU worker queue; renders separated stems into SeaweedFS.' },
+  { name: 'Spleeter', url: 'https://github.com/deezer/spleeter', license: 'MIT', tier: 'server', role: 'Fast stem separation', note: 'Runs server-side in containerized worker.' },
+  { name: 'Carla', url: 'https://github.com/falkTX/Carla', license: 'GPL-2.0+', tier: 'server', role: 'Headless cloud plugin host & rendering engine for all GPL engines', note: 'Executes on Linux cloud nodes; renders audio offline to SeaweedFS.' },
+  { name: 'Rubber Band', url: 'https://github.com/breakfastquay/rubberband', license: 'GPL-2.0 (commercial available)', tier: 'server', role: 'Time-stretch and pitch-shift', note: 'Headless CLI worker; processes audio server-side only.' },
 
-  // Optional GPL / LGPL
-  { name: 'Surge XT', url: 'https://github.com/surge-synthesizer/surge', license: 'GPL-3.0', tier: 'gpl', role: 'Hybrid synthesizer' },
-  { name: 'Vital', url: 'https://github.com/mtytel/vital', license: 'GPL-3.0', tier: 'gpl', role: 'Wavetable synthesizer', note: 'Upstream quiet since 2023.' },
-  { name: 'ZynAddSubFX', url: 'https://github.com/zynaddsubfx/zynaddsubfx', license: 'GPL-2.0', tier: 'gpl', role: 'Additive / subtractive / pad synth' },
-  { name: 'Hydrogen', url: 'https://github.com/hydrogen-music/hydrogen', license: 'GPL-2.0', tier: 'gpl', role: 'Drum machine and patterns' },
-  { name: 'aubio', url: 'https://github.com/aubio/aubio', license: 'GPL-3.0', tier: 'gpl', role: 'Pitch and beat detection' },
-  { name: 'Faust', url: 'https://github.com/grame-cncm/faust', license: 'GPL (compiler exception)', tier: 'gpl', role: 'DSP language for custom effects', note: 'Generated code is not GPL-bound under the compiler exception.' },
-  { name: 'Calf Studio Gear', url: 'https://github.com/calf-studio-gear/calf', license: 'LGPL-2.1', tier: 'gpl', role: 'Compressor, EQ and reverb suite' },
-  { name: 'FluidSynth', url: 'https://github.com/FluidSynth/fluidsynth', license: 'LGPL-2.1', tier: 'gpl', role: 'High-quality SoundFont playback' },
+  // Optional GPL / LGPL (Server-Side Carla Rendered)
+  { name: 'Surge XT', url: 'https://github.com/surge-synthesizer/surge', license: 'GPL-3.0', tier: 'gpl', role: 'Hybrid synthesizer', note: 'Hosted in headless Carla cloud nodes; audio renders into SeaweedFS layers.' },
+  { name: 'Vital', url: 'https://github.com/mtytel/vital', license: 'GPL-3.0', tier: 'gpl', role: 'Wavetable synthesizer', note: 'Hosted in headless Carla cloud nodes with GPU wavetable acceleration.' },
+  { name: 'ZynAddSubFX', url: 'https://github.com/zynaddsubfx/zynaddsubfx', license: 'GPL-2.0', tier: 'gpl', role: 'Additive / subtractive / pad synth', note: 'Headless Carla cloud render worker.' },
+  { name: 'Hydrogen', url: 'https://github.com/hydrogen-music/hydrogen', license: 'GPL-2.0', tier: 'gpl', role: 'Drum machine and patterns', note: 'Headless Carla cloud pattern and drum engine.' },
+  { name: 'aubio', url: 'https://github.com/aubio/aubio', license: 'GPL-3.0', tier: 'gpl', role: 'Pitch and beat detection', note: 'Server-side analysis job via Carla / worker pipeline.' },
+  { name: 'Faust', url: 'https://github.com/grame-cncm/faust', license: 'GPL (compiler exception)', tier: 'gpl', role: 'DSP language for custom effects', note: 'Compiler exception allows clean client WASM; also supports Carla cloud render.' },
+  { name: 'Calf Studio Gear', url: 'https://github.com/calf-studio-gear/calf', license: 'LGPL-2.1', tier: 'gpl', role: 'Compressor, EQ and reverb suite', note: 'LV2 rack hosted in headless Carla server nodes.' },
+  { name: 'FluidSynth', url: 'https://github.com/FluidSynth/fluidsynth', license: 'LGPL-2.1', tier: 'gpl', role: 'High-quality SoundFont playback', note: 'Server-side Carla SoundFont render worker.' },
 
   // Optional restricted
-  { name: 'Essentia.js', url: 'https://github.com/MTG/essentia.js', license: 'AGPL-3.0', tier: 'restricted', role: 'BPM, key and onset analysis', note: 'AGPL: network use triggers source obligations.' },
-  { name: 'Helm', url: 'https://github.com/mtytel/helm', license: 'GPL-3.0', tier: 'restricted', role: 'Subtractive synthesizer', note: 'Archived upstream; no further updates.' },
-  { name: 'sfizz', url: 'https://github.com/sfztools/sfizz', license: 'BSD-2-Clause', tier: 'restricted', role: 'SFZ sampler', note: 'Archived upstream; no further updates.' },
+  { name: 'Essentia.js', url: 'https://github.com/MTG/essentia.js', license: 'AGPL-3.0', tier: 'restricted', role: 'BPM, key and onset analysis', note: 'AGPL: network use triggers source obligations; off by default.' },
+  { name: 'Helm', url: 'https://github.com/mtytel/helm', license: 'GPL-3.0', tier: 'restricted', role: 'Subtractive synthesizer', note: 'Headless Carla render worker (archived upstream).' },
+  { name: 'sfizz', url: 'https://github.com/sfztools/sfizz', license: 'BSD-2-Clause', tier: 'restricted', role: 'SFZ sampler', note: 'Archived upstream; pinned release in Carla worker.' },
 ];

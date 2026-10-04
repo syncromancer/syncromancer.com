@@ -144,8 +144,8 @@ export const ModularSynthsSection: React.FC = () => {
                   Cardinal
                 </a>{' '}
                 virtual modular synthesizer, built on VCV Rack. Connect infinite virtual patch cables, CV
-                modulators, oscillators, and esoteric filter topologies rendered directly in the browser via
-                high-performance WebAssembly.
+                modulators, oscillators, and esoteric filter topologies. All complex modular racks render
+                through server-side headless Carla nodes, delivering massive multi-core DSP directly into SeaweedFS stems.
               </p>
 
               <div className="flex flex-col gap-2 font-mono text-xs text-slate-400 mb-6">
@@ -154,8 +154,8 @@ export const ModularSynthsSection: React.FC = () => {
                   <span className="text-slate-300">1000+ Bundled Modules</span>
                 </div>
                 <div className="p-2.5 bg-studio-900 rounded-xl border border-studio-800 flex items-center justify-between">
-                  <span className="text-rose-400 font-bold">Client / Server WASM DSP</span>
-                  <span className="text-emerald-400 font-bold">Zero Sample Jitter</span>
+                  <span className="text-rose-400 font-bold">Server-Side Carla Render</span>
+                  <span className="text-emerald-400 font-bold">0% Client Copyleft</span>
                 </div>
                 <div className="p-2.5 bg-studio-900 rounded-xl border border-studio-800 flex items-center justify-between">
                   <span className="text-rose-400 font-bold">Session Serialization</span>
@@ -205,7 +205,7 @@ export const ModularSynthsSection: React.FC = () => {
                 <span className="text-slate-600">&bull;</span>
                 <span className="text-xs font-mono text-slate-400">By FalkTX</span>
               </div>
-              <h3 className="text-2xl font-black text-white mb-2">KXStudio & DISTRHO Engine</h3>
+              <h3 className="text-2xl font-black text-white mb-2">KXStudio &amp; Carla Cloud Engine</h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-5">
                 Syncromancer incorporates the core audio infrastructure pioneered by{' '}
                 <a
@@ -216,27 +216,27 @@ export const ModularSynthsSection: React.FC = () => {
                 >
                   FalkTX
                 </a>
-                . From the{' '}
+                . Headless{' '}
                 <a
-                  href="https://github.com/DISTRHO/"
+                  href="https://github.com/falkTX/Carla"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-purple-300 font-bold hover:underline"
                 >
-                  DISTRHO
+                  Carla
                 </a>{' '}
-                Plugin Framework (DPF) to Carla audio patchbay routing principles and classic DPF-Plugins,
-                enjoy lightweight C++ DSP with zero wrapper overhead.
+                acts as our server-side cloud plugin host, executing copyleft synthesizers (Cardinal, Surge XT, Vital, ZynAddSubFX)
+                and rendering lossless audio layers into SeaweedFS without shipping GPL binaries to the browser.
               </p>
 
               <div className="flex flex-col gap-2 font-mono text-xs text-slate-400 mb-6">
                 <div className="p-2.5 bg-studio-900 rounded-xl border border-studio-800 flex items-center justify-between">
-                  <span className="text-purple-400 font-bold">DPF Plugin Architecture</span>
-                  <span className="text-slate-300">Deterministic C++ / WASM</span>
+                  <span className="text-purple-400 font-bold">Carla Headless Cloud Host</span>
+                  <span className="text-slate-300">Server-Side Linux Nodes</span>
                 </div>
                 <div className="p-2.5 bg-studio-900 rounded-xl border border-studio-800 flex items-center justify-between">
-                  <span className="text-purple-400 font-bold">KXStudio Audio Tooling</span>
-                  <span className="text-slate-300">Carla & Catia Signal Routing</span>
+                  <span className="text-purple-400 font-bold">GPL / LGPL Isolation</span>
+                  <span className="text-emerald-400 font-bold">Clean Browser Client</span>
                 </div>
                 <div className="p-2.5 bg-studio-900 rounded-xl border border-studio-800 flex items-center justify-between">
                   <span className="text-purple-400 font-bold">DISTRHO Sound Engines</span>

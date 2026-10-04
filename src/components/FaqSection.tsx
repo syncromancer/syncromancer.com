@@ -26,8 +26,8 @@ const faqs: FaqItem[] = [
     a: 'When an engineer routes an archival dry stem out through their physical audio interface into hardware gear (e.g. an Ampeg tube amp or Roland Space Echo tape loop), they record the return back into Syncromancer. The engineer records the round-trip latency compensation (e.g. 4.2ms) into the layer metadata, ensuring the re-amp sits in phase with the rest of the mix.',
   },
   {
-    q: 'How are FalkTX, Cardinal, KXStudio, and DISTRHO integrated?',
-    a: 'Syncromancer integrates the groundbreaking open-source audio DSP work of Filipe Coelho (FalkTX). We embed the mighty Cardinal virtual modular synthesizer (cardinal.kx.studio) with VCV Rack compatibility, alongside the DISTRHO Plugin Framework (DPF) and KXStudio audio tooling for native WebAssembly DSP with zero latency.',
+    q: 'How does Syncromancer host GPL engines like Cardinal and Surge XT without client licensing restrictions?',
+    a: 'All copyleft and GPL engines (including Cardinal modular racks, Surge XT, Vital, ZynAddSubFX, and Calf studio gear) execute strictly on server-side headless Carla render nodes running on our Linux cloud infrastructure. Your browser sends MIDI and parameter manifests, and Carla renders the audio server-side into lossless 24-bit/96kHz SeaweedFS stems. Because zero GPL binary code is distributed to the browser, the client DAW remains 100% clean and permissively licensed under MIT and Apache-2.0 standards.',
   },
   {
     q: 'How does Google Magenta AI assist with music production?',
