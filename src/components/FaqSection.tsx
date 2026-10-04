@@ -27,7 +27,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: 'How does Syncromancer host GPL engines like Cardinal and Surge XT without client licensing restrictions?',
-    a: 'All copyleft and GPL engines (including Cardinal modular racks, Surge XT, Vital, ZynAddSubFX, and Calf studio gear) execute strictly on server-side headless Carla render nodes running on our Linux cloud infrastructure. Your browser sends MIDI and parameter manifests, and Carla renders the audio server-side into lossless 24-bit/96kHz SeaweedFS stems. Because zero GPL binary code is distributed to the browser, the client DAW remains 100% clean and permissively licensed under MIT and Apache-2.0 standards.',
+    a: 'Copyleft and GPL engines (including Cardinal modular racks, Surge XT, Vitalium, ZynAddSubFX, and Calf studio gear) are routed through server-side headless Carla render nodes in our Linux cloud (currently in private beta). Your browser sends lightweight MIDI and parameter manifests, and the cloud nodes render the audio server-side into lossless SeaweedFS stems. Because zero GPL binaries are distributed to the browser, your client DAW bundle remains permissively licensed under MIT, Apache-2.0, and BSD standards.',
   },
   {
     q: 'How does Google Magenta AI assist with music production?',

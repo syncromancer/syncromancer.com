@@ -205,7 +205,7 @@ export const ModularSynthsSection: React.FC = () => {
                 <span className="text-slate-600">&bull;</span>
                 <span className="text-xs font-mono text-slate-400">By FalkTX</span>
               </div>
-              <h3 className="text-2xl font-black text-white mb-2">KXStudio &amp; Carla Cloud Engine</h3>
+              <h3 className="text-2xl font-black text-white mb-2">KXStudio &amp; Carla Cloud Engine (Beta)</h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-5">
                 Syncromancer incorporates the core audio infrastructure pioneered by{' '}
                 <a
@@ -225,13 +225,13 @@ export const ModularSynthsSection: React.FC = () => {
                 >
                   Carla
                 </a>{' '}
-                acts as our server-side cloud plugin host, executing copyleft synthesizers (Cardinal, Surge XT, Vital, ZynAddSubFX)
+                acts as our server-side cloud plugin host (currently in private beta), executing copyleft synthesizers (Cardinal, Surge XT, Vitalium, ZynAddSubFX)
                 and rendering lossless audio layers into SeaweedFS without shipping GPL binaries to the browser.
               </p>
 
               <div className="flex flex-col gap-2 font-mono text-xs text-slate-400 mb-6">
                 <div className="p-2.5 bg-studio-900 rounded-xl border border-studio-800 flex items-center justify-between">
-                  <span className="text-purple-400 font-bold">Carla Headless Cloud Host</span>
+                  <span className="text-purple-400 font-bold">Carla Headless Host (Beta)</span>
                   <span className="text-slate-300">Server-Side Linux Nodes</span>
                 </div>
                 <div className="p-2.5 bg-studio-900 rounded-xl border border-studio-800 flex items-center justify-between">

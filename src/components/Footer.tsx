@@ -198,16 +198,21 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-studio-800/60 flex flex-wrap items-center justify-between gap-4 text-[11px] text-slate-500">
-          <div>
-            &copy; {new Date().getFullYear()} Syncromancer. DAW as a Service. All rights reserved.
+        <div className="pt-8 border-t border-studio-800/60 flex flex-col gap-3 text-[11px] text-slate-500">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              &copy; {new Date().getFullYear()} Syncromancer. DAW as a Service. All rights reserved.
+            </div>
+            <div className="flex items-center gap-6">
+              <span className="text-slate-400">Public Portal: https://portal.syncromancer.com/</span>
+              <a href="#credits" className="hover:text-cyan-400 transition-colors">
+                Open Source Credits &amp; Licenses
+              </a>
+            </div>
           </div>
-          <div className="flex items-center gap-6">
-            <span className="text-slate-400">Public Portal: https://portal.syncromancer.com/</span>
-            <a href="#credits" className="hover:text-cyan-400 transition-colors">
-              Open Source Credits &amp; Licenses
-            </a>
-          </div>
+          <p className="text-[10px] text-slate-600 leading-relaxed">
+            VCV Rack is a trademark of VCV; Vital is a trademark of Vital Audio LLC; Moog is a trademark of Moog Music; used for identification and compatibility reference only. Each open-source project remains under its respective license.
+          </p>
         </div>
       </div>
     </footer>

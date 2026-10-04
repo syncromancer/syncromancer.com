@@ -275,9 +275,9 @@ export const HeroSection: React.FC = () => {
           {/* Footer Bar of Mockup */}
           <div className="px-5 py-3 bg-studio-950 border-t border-studio-800 flex items-center justify-between text-xs text-slate-400 font-mono">
             <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1 text-emerald-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                Cardinal &amp; DISTRHO Engine: Active
+              <span className="flex items-center gap-1 text-purple-300">
+                <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
+                Cardinal &amp; DISTRHO Cloud DSP: Beta Pipeline
               </span>
               <span className="hidden sm:inline text-slate-500">|</span>
               <span className="hidden sm:inline text-cyan-400">Google Magenta: Inference Ready</span>

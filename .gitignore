@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# backend infrastructure isolation (stored in private backend repos)
+/workers/
+/supabase/
+/docs/
+

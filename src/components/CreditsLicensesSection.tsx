@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
   Scale,
   ExternalLink,
@@ -32,7 +32,7 @@ const TIER_STYLE: Record<CatalogTier, { border: string; badge: string; icon: Rea
 const getEnvironmentTag = (e: CatalogEntry) => {
   if (e.tier === 'server' || e.tier === 'gpl' || e.name === 'Cardinal' || e.name === 'Dexed' || e.name === 'KXStudio') {
     return {
-      label: 'Headless Carla Cloud',
+      label: 'Headless Carla Cloud (Beta)',
       badge: 'bg-blue-950/80 text-blue-300 border-blue-800/70',
       icon: <Server className="w-3 h-3 text-blue-400" />,
     };
@@ -46,13 +46,13 @@ const getEnvironmentTag = (e: CatalogEntry) => {
   }
   if (e.tier === 'core') {
     return {
-      label: 'Client Web Audio (WASM / JS)',
+      label: 'Client Web Audio (WASM / WebCodecs)',
       badge: 'bg-teal-950/80 text-teal-300 border-teal-800/70',
       icon: <Cpu className="w-3 h-3 text-teal-400" />,
     };
   }
   return {
-    label: 'Experimental / Opt-In',
+    label: 'Archived Upstream / Legacy',
     badge: 'bg-amber-950/80 text-amber-300 border-amber-800/70',
     icon: <ShieldAlert className="w-3 h-3 text-amber-400" />,
   };
@@ -71,6 +71,20 @@ export const CreditsLicensesSection: React.FC = () => {
       /* ignore corrupt storage */
     }
   }, []);
+
+  const closeDialog = useCallback(() => {
+    setPendingRestricted(null);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && pendingRestricted) {
+        closeDialog();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [pendingRestricted, closeDialog]);
 
   const toggle = (name: string) => {
     setEnabled((prev) => {
@@ -131,12 +145,12 @@ export const CreditsLicensesSection: React.FC = () => {
       ).map((e) => ({ name: e.name, license: e.license })),
       carlaCloudRenderEngines: CATALOG.filter(
         (e) => (e.tier === 'gpl' && enabled[e.name]) || e.name === 'Cardinal' || e.name === 'Dexed'
-      ).map((e) => ({ name: e.name, license: e.license, host: 'Headless Carla Linux Worker' })),
+      ).map((e) => ({ name: e.name, license: e.license, host: 'Headless Carla Linux Worker (Beta)' })),
       restrictedEngines: CATALOG.filter(
         (e) => e.tier === 'restricted' && enabled[e.name]
       ).map((e) => ({ name: e.name, license: e.license })),
       storageContract: {
-        sessionManifests: 'Supabase Postgres (JSONB + pgmq)',
+        sessionManifests: 'Supabase Postgres JSONB',
         audioStems: 'SeaweedFS SHA-256 Content-Addressed Storage',
       },
     };
@@ -145,6 +159,9 @@ export const CreditsLicensesSection: React.FC = () => {
     setTimeout(() => setCopiedManifest(false), 2500);
   };
 
+  const clientPermissiveCount = CATALOG.filter(
+    (e) => e.tier === 'core' || (e.tier === 'foundation' && e.name === 'Google Magenta')
+  ).length;
   const gplEntries = CATALOG.filter((e) => e.tier === 'gpl');
   const gplEnabledCount = gplEntries.filter((e) => !!enabled[e.name]).length;
   const restrictedEntries = CATALOG.filter((e) => e.tier === 'restricted');
@@ -163,8 +180,8 @@ export const CreditsLicensesSection: React.FC = () => {
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300">
             Syncromancer is possible because of these open-source projects. Permissive libraries run in-browser
-            by default. Copyleft engines render server-side in headless Carla cloud nodes. Experimental AGPL modules
-            are strictly your choice.
+            with zero copyleft licensing baggage. Copyleft engines render server-side in headless Carla cloud nodes
+            (in private beta). Legacy archived modules are strictly your choice.
           </p>
         </div>
 
@@ -175,19 +192,19 @@ export const CreditsLicensesSection: React.FC = () => {
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
               <span className="text-slate-300">Permissive Client:</span>
               <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold">
-                13 Active (100% Clean Bundle)
+                {clientPermissiveCount} Active (Zero Copyleft Runtime)
               </span>
             </div>
             <div className="flex items-center gap-2">
               <Server className="w-4 h-4 text-blue-400" />
               <span className="text-slate-300">Carla Cloud Render:</span>
               <span className="px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800 font-bold">
-                {gplEnabledCount} of {gplEntries.length} Enabled
+                {gplEnabledCount} of {gplEntries.length} Enabled (Beta)
               </span>
             </div>
             <div className="flex items-center gap-2">
               <ShieldAlert className="w-4 h-4 text-amber-400" />
-              <span className="text-slate-300">Restricted / AGPL:</span>
+              <span className="text-slate-300">Legacy / Archived:</span>
               <span className="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800 font-bold">
                 {restrictedEnabledCount} of {restrictedEntries.length} Enabled
               </span>
@@ -255,9 +272,8 @@ export const CreditsLicensesSection: React.FC = () => {
                   <div className="mb-4 p-3.5 rounded-xl bg-amber-950/40 border border-amber-800/60 text-xs text-amber-200 flex gap-2.5">
                     <ShieldAlert className="w-4 h-4 shrink-0 mt-0.5 text-amber-400" />
                     <span>
-                      These projects are either licensed under AGPL (network execution triggers source-sharing
-                      obligations) or are archived upstream. They require an explicit acknowledgement modal
-                      before activating in your studio profile.
+                      These projects are archived upstream and receive no ongoing maintenance. They are
+                      pinned for legacy compatibility and require explicit acknowledgement before enabling.
                     </span>
                   </div>
                 )}
@@ -320,17 +336,24 @@ export const CreditsLicensesSection: React.FC = () => {
         <p className="mt-10 text-[11px] text-slate-500 text-center max-w-3xl mx-auto">
           All trademarks belong to their respective owners. Each project remains under its own
           license; full texts and source links are available on the linked repositories. Engine
-          configurations are stored in your browser and synced with your Supabase studio profile.
+          configurations are stored locally in your browser session. Cloud profile sync will be
+          enabled with the studio portal release.
         </p>
       </div>
 
-      {/* AGPL / Restricted Confirmation Modal */}
+      {/* Legacy / Restricted Confirmation Modal */}
       {pendingRestricted && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="license-dialog-title"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in"
+        >
           <div className="max-w-md w-full bg-studio-900 border border-amber-800/80 rounded-2xl p-6 shadow-2xl relative">
             <button
               type="button"
-              onClick={() => setPendingRestricted(null)}
+              onClick={closeDialog}
+              aria-label="Close dialog"
               className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg hover:bg-studio-800"
             >
               <X className="w-5 h-5" />
@@ -341,7 +364,7 @@ export const CreditsLicensesSection: React.FC = () => {
                 <AlertTriangle className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-base font-bold text-white">License Acknowledgement</h4>
+                <h4 id="license-dialog-title" className="text-base font-bold text-white">Legacy Upstream Notice</h4>
                 <span className="text-xs font-mono text-amber-400">
                   {pendingRestricted.name} &bull; {pendingRestricted.license}
                 </span>
@@ -349,31 +372,20 @@ export const CreditsLicensesSection: React.FC = () => {
             </div>
 
             <p className="text-xs text-slate-300 leading-relaxed mb-4">
-              {pendingRestricted.license.includes('AGPL') ? (
-                <>
-                  <strong className="text-amber-300">{pendingRestricted.name}</strong> is licensed under the{' '}
-                  <span className="font-mono text-amber-200">Affero General Public License (AGPL-3.0)</span>.
-                  Network interaction with AGPL software may require providing corresponding source code to network users.
-                  Syncromancer isolates this engine to dedicated opt-in worker environments.
-                </>
-              ) : (
-                <>
-                  <strong className="text-amber-300">{pendingRestricted.name}</strong> is archived or inactive upstream.
-                  It is maintained only for legacy playback compatibility and receives no upstream security or bug fixes.
-                </>
-              )}
+              <strong className="text-amber-300">{pendingRestricted.name}</strong> is archived or inactive upstream.
+              It is maintained for legacy playback compatibility only and receives no upstream security or stability patches.
             </p>
 
             <div className="p-3 rounded-lg bg-studio-950 border border-studio-800 text-[11px] font-mono text-slate-400 mb-6">
               Role: {pendingRestricted.role}
               <br />
-              Execution: Isolated Headless Container Worker
+              Execution: Isolated Headless Container Worker (Beta)
             </div>
 
             <div className="flex items-center justify-end gap-3">
               <button
                 type="button"
-                onClick={() => setPendingRestricted(null)}
+                onClick={closeDialog}
                 className="px-4 py-2 rounded-xl bg-studio-800 hover:bg-studio-700 text-slate-300 text-xs font-bold transition-colors"
               >
                 Cancel

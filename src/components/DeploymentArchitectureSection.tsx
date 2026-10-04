@@ -43,18 +43,19 @@ export const DeploymentArchitectureSection: React.FC = () => {
               <h3 className="text-base font-bold text-white mb-2">Web Audio &amp; Yjs CRDT</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
                 64-bit float multi-track mixing, Tone.js transport, WAM 2.0 / CLAP plugin hosts,
-                and Google Magenta neural models running locally. 100% permissive (MIT/Apache)—zero GPL code is shipped to your browser.
+                WebCodecs / libflac.js export, and Google Magenta neural models. Permissive client
+                stack (MIT / Apache / BSD)—zero copyleft binaries in the browser.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-cyan-400">
-              Clean client bundle &bull; 0% Copyleft
+              Permissive client bundle &bull; 0% Copyleft
             </div>
           </div>
 
           {/* Tier 2: Server-Side Carla Render Cluster */}
           <div className="bg-studio-900 border border-rose-900/40 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 px-2 py-0.5 bg-rose-950 text-rose-300 border-b border-l border-rose-800/60 font-mono text-[9px] uppercase font-bold rounded-bl">
-              Carla Cloud DSP
+              Carla Cloud DSP (Beta)
             </div>
             <div>
               <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-500/20 flex items-center justify-center mb-4">
@@ -63,14 +64,14 @@ export const DeploymentArchitectureSection: React.FC = () => {
               <span className="text-[10px] font-mono text-rose-400 uppercase font-bold tracking-wider block mb-1">
                 Tier 2: Cloud Render Nodes
               </span>
-              <h3 className="text-base font-bold text-white mb-2">Headless Carla Host</h3>
+              <h3 className="text-base font-bold text-white mb-2">Headless Carla Host (Beta)</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Containerized headless Carla (by FalkTX) audio nodes running all GPL/copyleft engines
-                (Cardinal modular, Surge XT, Vital, ZynAddSubFX, Demucs). Renders lossless audio layers server-side directly to SeaweedFS.
+                Containerized headless Carla (by FalkTX) audio nodes running copyleft engines
+                (Cardinal modular, Surge XT, Vitalium, ZynAddSubFX). Renders lossless audio layers server-side directly to SeaweedFS.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-studio-800 font-mono text-[10px] text-rose-400">
-              Isolated Linux render workers
+              Isolated Linux render workers &bull; In active development
             </div>
           </div>
 
